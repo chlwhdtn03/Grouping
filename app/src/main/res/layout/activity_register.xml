@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dp"
+    android:padding="20dp"
     android:background="#F1F2F7"
     tools:context=".RegisterActivity">
 
@@ -18,12 +18,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@id/reg_center"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_marginTop="18dp">
 
         <ImageView
             android:id="@+id/splash_img"
-            android:layout_width="160dp"
-            android:layout_height="115dp"
+            android:layout_width="180dp"
+            android:layout_height="130dp"
             android:adjustViewBounds="true"
             android:src="@drawable/ic_splash" />
 
@@ -33,9 +34,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/noto_bold"
             android:includeFontPadding="false"
-            android:text="@string/app_name"
+            android:text="회원가입"
             android:textColor="#000"
-            android:textSize="24sp"/>
+            android:textSize="36sp"/>
 
     </LinearLayout>
 
@@ -49,11 +50,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent">
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="104dp">
 
         <soup.neumorphism.NeumorphCardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:neumorph_shapeType="flat"
+            app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+            app:neumorph_backgroundColor="@color/neumorph_background_color"
+            app:neumorph_shadowColorLight="@color/solid_light_color"
+            app:neumorph_shadowColorDark="@color/solid_dark_color"
+            app:neumorph_inset="10dp">
 
             <EditText
                 android:layout_width="match_parent"
@@ -75,7 +83,13 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent">
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:neumorph_shapeType="flat"
+            app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+            app:neumorph_backgroundColor="@color/neumorph_background_color"
+            app:neumorph_shadowColorLight="@color/solid_light_color"
+            app:neumorph_shadowColorDark="@color/solid_dark_color"
+            app:neumorph_inset="10dp">
 
             <EditText
                 android:layout_width="match_parent"
@@ -97,7 +111,13 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent">
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:neumorph_shapeType="flat"
+            app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+            app:neumorph_backgroundColor="@color/neumorph_background_color"
+            app:neumorph_shadowColorLight="@color/solid_light_color"
+            app:neumorph_shadowColorDark="@color/solid_dark_color"
+            app:neumorph_inset="10dp">
 
             <EditText
                 android:layout_width="match_parent"
@@ -119,7 +139,13 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent">
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:neumorph_shapeType="flat"
+            app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+            app:neumorph_backgroundColor="@color/neumorph_background_color"
+            app:neumorph_shadowColorLight="@color/solid_light_color"
+            app:neumorph_shadowColorDark="@color/solid_dark_color"
+            app:neumorph_inset="10dp">
 
             <EditText
                 android:layout_width="match_parent"
@@ -133,6 +159,35 @@
                 android:inputType="textPassword"
                 android:background="@null"/>
 
+
+        </soup.neumorphism.NeumorphCardView>
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:neumorph_shapeType="flat"
+            app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+            app:neumorph_backgroundColor="@color/neumorph_background_color"
+            app:neumorph_shadowColorLight="@color/solid_light_color"
+            app:neumorph_shadowColorDark="@color/solid_dark_color"
+            app:neumorph_inset="10dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="집 위치"
+                android:fontFamily="@font/noto_regular"
+                android:includeFontPadding="false"
+                android:padding="10dp"
+                android:textSize="16sp"
+                android:id="@+id/address_name"
+                android:inputType="textPassword"
+                android:background="@null"/>
+
+
         </soup.neumorphism.NeumorphCardView>
     </LinearLayout>
 
@@ -145,20 +200,27 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp">
 
 
         <soup.neumorphism.NeumorphButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
+            android:padding="22dp"
             android:id="@+id/reg_regBtn"
             android:fontFamily="@font/noto_bold"
             android:includeFontPadding="false"
             android:textColor="#000"
             android:gravity="center"
             android:text="회원가입"
-            android:textSize="16dp"/>
+            android:textSize="16dp"
+            app:neumorph_shapeType="flat"
+            app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+            app:neumorph_backgroundColor="@color/neumorph_background_color"
+            app:neumorph_shadowColorLight="@color/solid_light_color"
+            app:neumorph_shadowColorDark="@color/solid_dark_color"
+            app:neumorph_inset="10dp"/>
     </LinearLayout>
 
 
