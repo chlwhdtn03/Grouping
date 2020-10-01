@@ -18,12 +18,12 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@id/login_center"
         android:gravity="center"
-        android:layout_marginTop="32dp">
+        android:layout_marginTop="48dp">
 
         <ImageView
             android:id="@+id/splash_img"
-            android:layout_width="160dp"
-            android:layout_height="115dp"
+            android:layout_width="180dp"
+            android:layout_height="130dp"
             android:adjustViewBounds="true"
             android:src="@drawable/ic_splash" />
 
@@ -33,9 +33,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/noto_bold"
             android:includeFontPadding="false"
-            android:text="@string/app_name"
+            android:text="로그인"
             android:textColor="#000"
-            android:textSize="24sp" />
+            android:textSize="36sp" />
 
     </LinearLayout>
 
@@ -52,7 +52,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="48dp">
 
         <soup.neumorphism.NeumorphCardView
             android:layout_width="match_parent"
@@ -116,31 +116,31 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:orientation="vertical"
-        android:layout_marginBottom="32dp">
+        android:layout_marginBottom="86dp">
 
 
         <soup.neumorphism.NeumorphButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="20dp"
             android:id="@+id/login_loginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/noto_bold"
-            android:includeFontPadding="false"
-            android:textColor="#000"
             android:gravity="center"
+            android:includeFontPadding="false"
+            android:padding="22dp"
             android:text="로그인"
+            android:textColor="#000"
             android:textSize="16dp"
-            app:neumorph_shapeType="flat"
-            app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
             app:neumorph_backgroundColor="@color/neumorph_background_color"
-            app:neumorph_shadowColorLight="@color/solid_light_color"
+            app:neumorph_inset="10dp"
             app:neumorph_shadowColorDark="@color/solid_dark_color"
-            app:neumorph_inset="10dp"/>
+            app:neumorph_shadowColorLight="@color/solid_light_color"
+            app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+            app:neumorph_shapeType="flat" />
 
         <soup.neumorphism.NeumorphButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
+            android:padding="22dp"
             android:id="@+id/login_regBtn"
             android:fontFamily="@font/noto_bold"
             android:includeFontPadding="false"
