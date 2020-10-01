@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="25dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="30sp"
+            android:textColor="#38435A"
+            android:id="@+id/home_text_group"
+            android:fontFamily="@font/noto_medium"
+            android:includeFontPadding="false"
+            android:text="그룹"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/noto_medium"
+            android:includeFontPadding="false"
+            android:text="전체 보기"
+            android:textColor="#6C63FF"
+            android:textSize="14sp"
+            android:id="@+id/home_more_group"
+            app:layout_constraintBottom_toBottomOf="@+id/home_text_group"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/home_text_group" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/home_grouplist"
+            app:layout_constraintTop_toBottomOf="@+id/home_text_group"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/home_grouplist"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="20dp"
+            android:textSize="30sp"
+            android:textColor="#38435A"
+            android:id="@+id/home_text_schdule"
+            android:fontFamily="@font/noto_medium"
+            android:includeFontPadding="false"
+            android:text="일정"/>
+
+        <TextView
+            android:id="@+id/home_more_schdule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/noto_medium"
+            android:includeFontPadding="false"
+            android:text="전체 보기"
+            android:textColor="#6C63FF"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/home_text_schdule"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/home_text_schdule" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/home_schdulelist"
+            app:layout_constraintTop_toBottomOf="@+id/home_text_schdule"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
