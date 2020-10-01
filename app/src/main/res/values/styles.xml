@@ -10,4 +10,19 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="TitleBarTextAppearance" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/noto_medium</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="CustomShapeAppearance">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">0dp</item>
+
+        <item name="neumorph_cornerSizeTopLeft">0dp</item>
+        <item name="neumorph_cornerSizeTopRight">0dp</item>
+        <item name="neumorph_cornerSizeBottomLeft">0dp</item>
+        <item name="neumorph_cornerSizeBottomRight">0dp</item>
+    </style>
+
 </resources>

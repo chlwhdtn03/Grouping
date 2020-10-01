@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    android:background="#F1F2F7"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/login_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/login_center"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/splash_img"
+            android:layout_width="160dp"
+            android:layout_height="115dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_splash" />
+
+        <TextView
+            android:id="@+id/splash_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/noto_bold"
+            android:includeFontPadding="false"
+            android:text="@string/app_name"
+            android:textColor="#000"
+            android:textSize="24sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:id="@+id/login_center"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/CustomShapeAppearance">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="아이디"
+                android:fontFamily="@font/noto_regular"
+                android:includeFontPadding="false"
+                android:padding="10dp"
+                android:textSize="16sp"
+                android:id="@+id/login_id"
+                android:inputType="text"
+                android:background="@null"/>
+
+        </soup.neumorphism.NeumorphCardView>
+
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/CustomShapeAppearance">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="비밀번호"
+                android:fontFamily="@font/noto_regular"
+                android:includeFontPadding="false"
+                android:padding="10dp"
+                android:textSize="16sp"
+                android:id="@+id/login_pw"
+                android:inputType="textPassword"
+                android:background="@null"/>
+
+        </soup.neumorphism.NeumorphCardView>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_bottom"
+        app:layout_constraintTop_toBottomOf="@id/login_center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:orientation="vertical">
+
+
+        <soup.neumorphism.NeumorphButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:id="@+id/login_loginBtn"
+            android:fontFamily="@font/noto_medium"
+            android:includeFontPadding="false"
+            android:gravity="center"
+            android:text="로그인"
+            android:textSize="16dp"
+            style="@style/CustomShapeAppearance"/>
+
+        <soup.neumorphism.NeumorphButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:id="@+id/login_regBtn"
+            android:fontFamily="@font/noto_medium"
+            android:includeFontPadding="false"
+            android:gravity="center"
+            android:text="회원가입"
+            android:textSize="16dp"
+            style="@style/CustomShapeAppearance"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
