@@ -3,4 +3,7 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="neumorph_background_color">#ECF0F3</color>
+    <color name="solid_light_color">#FFFFFF</color>
+    <color name="solid_dark_color">#55AEAEC0</color>
 </resources>
