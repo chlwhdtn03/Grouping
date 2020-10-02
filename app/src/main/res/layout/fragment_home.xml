@@ -50,13 +50,13 @@
             android:layout_marginTop="20dp"
             android:textSize="30sp"
             android:textColor="#38435A"
-            android:id="@+id/home_text_schdule"
+            android:id="@+id/home_text_schedule"
             android:fontFamily="@font/noto_medium"
             android:includeFontPadding="false"
             android:text="일정"/>
 
         <TextView
-            android:id="@+id/home_more_schdule"
+            android:id="@+id/home_more_schedule"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/noto_medium"
@@ -64,16 +64,16 @@
             android:text="전체 보기"
             android:textColor="#6C63FF"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/home_text_schdule"
+            app:layout_constraintBottom_toBottomOf="@+id/home_text_schedule"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/home_text_schdule" />
+            app:layout_constraintTop_toTopOf="@+id/home_text_schedule" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:id="@+id/home_schdulelist"
-            app:layout_constraintTop_toBottomOf="@+id/home_text_schdule"/>
+            android:id="@+id/home_schdeulelist"
+            app:layout_constraintTop_toBottomOf="@+id/home_text_schedule"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
