@@ -14,22 +14,22 @@ public class Place extends Location {
      * @param lat 위도
      * @param lnt 경도
      */
-    public Place(int lat, int lnt, String placeName) {
+    public Place(String lat, String lnt, String placeName) {
         super(lat, lnt);
         this.placeName = placeName;
     }
     public Place(Location loc, String placeName) {
-        super(loc.getLat(), loc.getLat());
+        super(loc.getLatitude(), loc.getLatitude());
         this.placeName = placeName;
     }
 
-    public Place(int lat, int lnt, String placeName, Uri placePhoto) {
+    public Place(String lat, String lnt, String placeName, Uri placePhoto) {
         super(lat, lnt);
         this.placeName = placeName;
         this.placePhoto = placePhoto;
     }
     public Place(Location loc, String placeName, Uri placePhoto) {
-        super(loc.getLat(), loc.getLat());
+        super(loc.getLatitude(), loc.getLatitude());
         this.placeName = placeName;
         this.placePhoto = placePhoto;
     }

@@ -4,36 +4,36 @@ package com.chlwhdtn.grouping.Data.Location;
  * 일반 위치를 위한 클래스
  */
 public class Location {
-    private int Lat, Lnt;
+    private String latitude, longitude;
 
     /**
-     * @param lat 위도
-     * @param lnt 경도
+     * @param latitude 위도
+     * @param longitude 경도
      */
-    public Location(int lat, int lnt) {
-        Lat = lat;
-        Lnt = lnt;
+    public Location(String latitude, String longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     /**
      * @return 위도
      */
-    public int getLat() {
-        return Lat;
+    public String getLatitude() {
+        return latitude;
     }
 
-    public void setLat(int lat) {
-        Lat = lat;
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
     }
 
     /**
      * @return 경도
      */
-    public int getLnt() {
-        return Lnt;
+    public String getLongitude() {
+        return longitude;
     }
 
-    public void setLnt(int lnt) {
-        Lnt = lnt;
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 }

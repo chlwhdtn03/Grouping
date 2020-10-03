@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.chlwhdtn.grouping.Util.LoadingBox;
+import com.chlwhdtn.grouping.Util.MessageBox;
+import com.chlwhdtn.grouping.Util.MessageType;
+
 public class LoginActivity extends AppCompatActivity {
 
     Button loginbtn, regbtn;
@@ -19,8 +23,10 @@ public class LoginActivity extends AppCompatActivity {
         loginbtn = findViewById(R.id.login_loginBtn);
 
         loginbtn.setOnClickListener(v -> {
+
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
         });
+
         regbtn.setOnClickListener(v -> {
             startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
         });

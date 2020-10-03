@@ -4,27 +4,28 @@ import com.chlwhdtn.grouping.Data.Location.Location;
 
 public class User {
 
-    public String name;
-    public Location location;
+    private String id;
+    private String username;
 
-    public User(String name, Location location) {
-        this.name = name;
-        this.location = location;
+    public User(String id, String username) {
+        this.id = id;
+        this.username = username;
     }
 
-    public String getName() {
-        return name;
+    public String getId() {
+        return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public Location getLocation() {
-        return location;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setUsername(String username) {
+        this.username = username;
     }
+
 }
