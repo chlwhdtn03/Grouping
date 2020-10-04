@@ -4,11 +4,29 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.chlwhdtn.grouping.Data.CommonResult;
+import com.chlwhdtn.grouping.Data.Location.Location;
+import com.chlwhdtn.grouping.Data.LoginObject;
+import com.chlwhdtn.grouping.Data.UserRequestType;
+import com.chlwhdtn.grouping.Retrofit.GroupingRetrofit;
+import com.chlwhdtn.grouping.Retrofit.GroupingService;
+import com.chlwhdtn.grouping.Util.UserManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.Gson;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        LoadUserInfo();
+
         menu = findViewById(R.id.main_menu);
         toolbar = findViewById(R.id.main_toolbar);
 
@@ -30,6 +50,40 @@ public class MainActivity extends AppCompatActivity {
 
         changeFragment(0);
 
+    }
+
+    private void LoadUserInfo() {
+        GroupingService retrofit = GroupingRetrofit.getInstance(getBaseContext()).getGroupingService();
+        Call<CommonResult> response = retrofit.getUserData("Bearer " + UserManager.getAccount(getBaseContext()).getAccessToken(), new UserRequestType(Arrays.asList("id","username","location")));
+
+        response.enqueue(new Callback<CommonResult>() {
+            @Override
+            public void onResponse(Call<CommonResult> call, Response<CommonResult> res) {
+
+                Log.e("PROBLEM", call.request().toString());
+                CommonResult result = res.body();
+
+                if(result == null) {
+                    try { result = new Gson().fromJson(res.errorBody().string(), CommonResult.class); }
+                    catch (IOException e) { e.printStackTrace(); }
+                }
+
+                if(result.isSuccess()) {
+                    UserManager.setMy(result.getData());
+                    Log.w("Result", UserManager.getMy().getId() + ", " + UserManager.getMy().getUsername());
+                } else {
+                    UserManager.deleteAccount(MainActivity.this);
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                    finish();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CommonResult> call, Throwable t) {
+                Log.e("PROBLEM", call.request().toString());
+                t.printStackTrace();
+            }
+        });
     }
 
     private void changeFragment(int id) {

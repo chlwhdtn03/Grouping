@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Grouping</string>
-    <string name="base_url">unitaemin.run.goorm.io/grouping/</string>
+    <string name="base_url">https://unitaemin.run.goorm.io/</string>
 </resources>
