@@ -59,8 +59,6 @@ public class MainActivity extends AppCompatActivity {
         response.enqueue(new Callback<CommonResult>() {
             @Override
             public void onResponse(Call<CommonResult> call, Response<CommonResult> res) {
-
-                Log.e("PROBLEM", call.request().toString());
                 CommonResult result = res.body();
 
                 if(result == null) {
@@ -70,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
 
                 if(result.isSuccess()) {
                     UserManager.setMy(result.getData());
-                    Log.w("Result", UserManager.getMy().getId() + ", " + UserManager.getMy().getUsername());
                 } else {
                     UserManager.deleteAccount(MainActivity.this);
                     startActivity(new Intent(MainActivity.this, LoginActivity.class));
@@ -80,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<CommonResult> call, Throwable t) {
-                Log.e("PROBLEM", call.request().toString());
                 t.printStackTrace();
             }
         });
