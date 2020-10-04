@@ -10,6 +10,92 @@
         android:layout_height="match_parent"
         android:padding="25dp">
 
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:neumorph_shapeType="pressed"
+            android:id="@+id/profile_username_layout"
+            app:neumorph_shapeAppearance="@style/ProfileShapeAppearance">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="15dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/noto_medium"
+                    android:paddingHorizontal="10dp"
+                    android:layout_weight="2"
+                    android:text="이름" />
+
+                <soup.neumorphism.NeumorphCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="15dp"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/noto_medium"
+                        android:text="홍길동"
+                        android:id="@+id/profile_username"/>
+
+                </soup.neumorphism.NeumorphCardView>
+
+            </LinearLayout>
+
+        </soup.neumorphism.NeumorphCardView>
+
+
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/profile_username_layout"
+            app:neumorph_shapeType="pressed"
+            android:id="@+id/profile_id_layout"
+            app:neumorph_shapeAppearance="@style/ProfileShapeAppearance">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="15dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/noto_medium"
+                    android:paddingHorizontal="10dp"
+                    android:layout_weight="2"
+                    android:text="아이디" />
+
+                <soup.neumorphism.NeumorphCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="15dp"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/noto_medium"
+                        android:text="hong-gil"
+                        android:id="@+id/profile_id"/>
+
+                </soup.neumorphism.NeumorphCardView>
+
+            </LinearLayout>
+
+        </soup.neumorphism.NeumorphCardView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
