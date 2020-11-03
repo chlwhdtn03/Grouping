@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
 
 public class HomeFragment extends Fragment {
 
-    TextView home_more_group;
+    TextView home_more_group, schedule_create;
 
     @Nullable
     @Override
@@ -24,9 +24,14 @@ public class HomeFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
 
         home_more_group = v.findViewById(R.id.home_more_group);
+        schedule_create = v.findViewById(R.id.home_more_schedule);
 
         home_more_group.setOnClickListener(item -> {
             startActivity(new Intent(v.getContext(), CreateGroupActivity.class));
+        });
+
+        schedule_create.setOnClickListener(item -> {
+            startActivity(new Intent(v.getContext(), ScheduleCreateActivity.class)); // 지우기!! 테스트용
         });
 
         return v;

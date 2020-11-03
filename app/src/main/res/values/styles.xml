@@ -26,6 +26,7 @@
         <item name="neumorph_cornerSizeBottomRight">16dp</item>
     </style>
 
+
     <style name="ProfileShapeAppearance">
         <item name="neumorph_cornerFamily">rounded</item>
         <item name="neumorph_cornerSize">50dp</item>
