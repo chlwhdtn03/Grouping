@@ -23,14 +23,14 @@
             android:text="그룹"/>
 
         <TextView
+            android:id="@+id/home_more_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/noto_medium"
             android:includeFontPadding="false"
-            android:text="전체 보기"
+            android:text="그룹 추가"
             android:textColor="#6C63FF"
             android:textSize="14sp"
-            android:id="@+id/home_more_group"
             app:layout_constraintBottom_toBottomOf="@+id/home_text_group"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/home_text_group" />
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/noto_medium"
             android:includeFontPadding="false"
-            android:text="전체 보기"
+            android:text="일정 생성"
             android:textColor="#6C63FF"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@+id/home_text_schedule"

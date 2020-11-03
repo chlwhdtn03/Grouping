@@ -163,35 +163,7 @@
                 android:padding="10dp"
                 android:textSize="16sp"
                 android:id="@+id/reg_name"
-                android:inputType="textPassword"
-                android:background="@null"/>
-
-
-        </soup.neumorphism.NeumorphCardView>
-        <soup.neumorphism.NeumorphCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:neumorph_shapeType="flat"
-            app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
-            app:neumorph_backgroundColor="@color/neumorph_background_color"
-            app:neumorph_shadowColorLight="@color/solid_light_color"
-            app:neumorph_shadowColorDark="@color/solid_dark_color"
-            app:neumorph_inset="10dp">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="집 위치"
-                android:fontFamily="@font/noto_regular"
-                android:includeFontPadding="false"
-                android:padding="10dp"
-                android:textSize="16sp"
-                android:id="@+id/address_name"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:background="@null"/>
 
 
