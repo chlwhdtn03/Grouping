@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
 
-        changeFragment(0);
+        changeFragment(R.id.menu1);
 
     }
 
