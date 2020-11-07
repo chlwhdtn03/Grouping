@@ -97,6 +97,13 @@
 
         </soup.neumorphism.NeumorphCardView>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_logout_btn"
+            app:layout_constraintTop_toBottomOf="@+id/profile_id_layout"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="Logout"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

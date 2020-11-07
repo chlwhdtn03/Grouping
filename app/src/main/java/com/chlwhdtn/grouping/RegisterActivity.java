@@ -15,6 +15,8 @@ import com.chlwhdtn.grouping.Data.Location.Location;
 import com.chlwhdtn.grouping.Data.RegisterData;
 import com.chlwhdtn.grouping.Retrofit.GroupingRetrofit;
 import com.chlwhdtn.grouping.Retrofit.GroupingService;
+import com.chlwhdtn.grouping.Util.MessageBox;
+import com.chlwhdtn.grouping.Util.MessageType;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -53,18 +55,21 @@ public class RegisterActivity extends AppCompatActivity {
 
                     if(result == null) {
                         try { result = new Gson().fromJson(res.errorBody().string(), CommonResult.class); }
-                        catch (IOException e) { e.printStackTrace(); }
+                        catch (IOException e) {
+                            MessageBox.show(view, "회원가입에 문제가 발생하였습니다.", MessageType.ERROR);
+                            e.printStackTrace();
+                        }
                     }
 
                     if(result.isSuccess())
                         finish();
                     else
-                        Toast.makeText(getBaseContext(), result.getMessage(), Toast.LENGTH_LONG).show();
+                        MessageBox.show(view, result.getMessage(), MessageType.WARNING);
                 }
 
                 @Override
                 public void onFailure(Call<CommonResult> call, Throwable t) {
-
+                    MessageBox.show(view, t.getMessage(), MessageType.ERROR);
                 }
             });
         });

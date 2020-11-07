@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import com.chlwhdtn.grouping.Util.UserManager;
 public class ProfileFragment extends Fragment {
 
     TextView username, id;
+    Button logout_btn;
 
     @Nullable
     @Override
@@ -29,6 +31,11 @@ public class ProfileFragment extends Fragment {
 
         username.setText(UserManager.getMy().getUsername());
         id.setText(UserManager.getMy().getId());
+
+        logout_btn = view.findViewById(R.id.profile_logout_btn);
+        logout_btn.setOnClickListener(v -> {
+            UserManager.deleteAccount(getContext());
+        });
 
         return view;
     }

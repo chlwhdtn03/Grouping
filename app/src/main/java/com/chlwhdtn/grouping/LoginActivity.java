@@ -61,7 +61,10 @@ public class LoginActivity extends AppCompatActivity {
 
                     if(result == null) {
                         try { result = new Gson().fromJson(res.errorBody().string(), CommonResult.class); }
-                        catch (IOException e) { e.printStackTrace(); }
+                        catch (IOException e) {
+                            MessageBox.show(v, "로그인에 문제가 발생하였습니다.", MessageType.ERROR);
+                            e.printStackTrace();
+                        }
                     }
 
                     if(result.isSuccess()) {
@@ -69,13 +72,14 @@ public class LoginActivity extends AppCompatActivity {
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
                         finish();
                     } else {
-                        Toast.makeText(getBaseContext(), result.getMessage(), Toast.LENGTH_LONG).show();
+//                        Toast.makeText(getBaseContext(), result.getMessage(), Toast.LENGTH_LONG).show();
+                        MessageBox.show(v, result.getMessage(), MessageType.WARNING);
                     }
                 }
 
                 @Override
                 public void onFailure(Call<CommonResult> call, Throwable t) {
-
+                    MessageBox.show(v, t.getMessage(), MessageType.ERROR);
                 }
             });
 
