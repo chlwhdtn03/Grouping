@@ -8,12 +8,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.chlwhdtn.grouping.Data.Group;
+import com.chlwhdtn.grouping.adapter.GroupAdapter;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class HomeFragment extends Fragment {
 
+    RecyclerView group_recyclerview, schedule_recylcerview;
     TextView home_more_group, schedule_create;
 
     @Nullable
@@ -25,6 +34,13 @@ public class HomeFragment extends Fragment {
 
         home_more_group = v.findViewById(R.id.home_more_group);
         schedule_create = v.findViewById(R.id.home_more_schedule);
+        group_recyclerview = v.findViewById(R.id.home_grouplist);
+
+        ArrayList<Group> list = new ArrayList<>();
+        list.add(new Group("G"));
+        GroupAdapter adapter = new GroupAdapter(list);
+        group_recyclerview.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
 
         home_more_group.setOnClickListener(item -> {
             startActivity(new Intent(v.getContext(), CreateGroupActivity.class));

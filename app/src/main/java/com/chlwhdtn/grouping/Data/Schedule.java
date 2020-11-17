@@ -5,53 +5,56 @@ import com.chlwhdtn.grouping.Data.Location.Place;
 import java.util.Date;
 
 public class Schedule {
-    private String name;
-    private Group group;
-    private Date date;
-    private Place place;
+    private String title;
+    private String group_id;
+    private String date;
+    private String location;
+    private String owner;
 
-    public Schedule(String name, Group group, Date date) {
-        this.name = name;
-        this.group = group;
+    public Schedule(String title, String group_id, String date, String location) {
+        this.title = title;
+        this.group_id = group_id;
         this.date = date;
+        this.location = location;
     }
 
-    public Schedule(String name, Group group, Date date, Place place) {
-        this.name = name;
-        this.group = group;
-        this.date = date;
-        this.place = place;
+    public String getOwner() {
+        return owner;
     }
 
-    public String getName() {
-        return name;
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getTitle() {
+        return title;
     }
 
-    public Group getGroup() {
-        return group;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setGroup(Group group) {
-        this.group = group;
+    public String getGroup_id() {
+        return group_id;
     }
 
-    public Place getPlace() {
-        return place;
+    public void setGroup_id(String group_id) {
+        this.group_id = group_id;
     }
 
-    public void setPlace(Place place) {
-        this.place = place;
-    }
-
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

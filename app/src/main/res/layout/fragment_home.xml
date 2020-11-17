@@ -40,6 +40,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:id="@+id/home_grouplist"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="5"
+
             app:layout_constraintTop_toBottomOf="@+id/home_text_group"/>
 
         <TextView

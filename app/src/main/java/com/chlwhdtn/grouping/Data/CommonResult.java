@@ -8,8 +8,17 @@ public class CommonResult {
     private boolean result;
     private String message;
     private String accessToken;
+    private Object list;
     private User data;
     private int status;
+
+    public void setList(Object list) {
+        this.list = list;
+    }
+
+    public Object getList() {
+        return list;
+    }
 
     public boolean isResult() {
         return result;

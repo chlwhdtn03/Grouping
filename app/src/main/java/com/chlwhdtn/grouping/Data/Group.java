@@ -5,55 +5,44 @@ import android.net.Uri;
 import java.util.ArrayList;
 
 public class Group {
-    private String name;
-    private Uri icon;
-    private ArrayList<User> users;
-    private ArrayList<Schedule> schedules;
+    private String title;
+    private String inviteCode;
+    private ArrayList<User> member;
+    private ArrayList<Schedule> schedule;
 
-
-    /**
-     * @param name 그룹 이름
-     * @param icon 그룹 아이콘
-     * @param users 소속 유저
-     * @param schedules 그룹 일정
-     */
-    public Group(String name, Uri icon, ArrayList<User> users, ArrayList<Schedule> schedules) {
-        this.name = name;
-        this.icon = icon;
-        this.users = users;
-        this.schedules = schedules;
+    public Group(String title) {
+        this.title = title;
     }
 
-
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public ArrayList<User> getUsers() {
-        return users;
+    public String getInviteCode() {
+        return inviteCode;
     }
 
-    public void setUsers(ArrayList<User> users) {
-        this.users = users;
+    public void setInviteCode(String inviteCode) {
+        this.inviteCode = inviteCode;
     }
 
-    public Uri getIcon() {
-        return icon;
+    public ArrayList<User> getMember() {
+        return member;
     }
 
-    public void setIcon(Uri icon) {
-        this.icon = icon;
+    public void setMember(ArrayList<User> member) {
+        this.member = member;
     }
 
-    public ArrayList<Schedule> getSchedules() {
-        return schedules;
+    public ArrayList<Schedule> getSchedule() {
+        return schedule;
     }
 
-    public void setSchedules(ArrayList<Schedule> schedules) {
-        this.schedules = schedules;
+    public void setSchedule(ArrayList<Schedule> schedule) {
+        this.schedule = schedule;
     }
 }
