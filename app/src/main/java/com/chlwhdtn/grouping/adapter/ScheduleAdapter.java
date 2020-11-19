@@ -32,7 +32,8 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.date.setText(list.get(position).getDate());
         holder.group.setText(list.get(position).getOwner());
-        holder.title.setText(list.get(0).getTitle());
+        holder.title.setText(list.get(position).getTitle());
+
     }
 
     @Override

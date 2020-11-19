@@ -4,6 +4,8 @@ import com.chlwhdtn.grouping.Data.CommonResult;
 import com.chlwhdtn.grouping.Data.Location.Location;
 import com.chlwhdtn.grouping.Data.LoginObject;
 import com.chlwhdtn.grouping.Data.RegisterData;
+import com.chlwhdtn.grouping.Data.RequestGroupCreate;
+import com.chlwhdtn.grouping.Data.RequestJoinGroup;
 import com.chlwhdtn.grouping.Data.Schedule;
 import com.chlwhdtn.grouping.Data.UserRequestType;
 
@@ -43,12 +45,12 @@ public interface GroupingService {
     @POST("grouping/group/create")
     Call<CommonResult> createGroup(
             @Header("Authorization") String token,
-            @Body String title
+            @Body RequestGroupCreate req
     );
 
     // Group
 
-    @GET("grouping/group/create")
+    @GET("grouping/group/get")
     Call<CommonResult> getGroups(
             @Header("Authorization") String token
     );
@@ -68,7 +70,7 @@ public interface GroupingService {
     @POST("grouping/group/join")
     Call<CommonResult> joinGroup(
             @Header("Authorization") String token,
-            @Body String code
+            @Body RequestJoinGroup rjg
     );
 
     // Schedule

@@ -7,8 +7,8 @@ import java.util.ArrayList;
 public class Group {
     private String title;
     private String inviteCode;
-    private ArrayList<User> member;
-    private ArrayList<Schedule> schedule;
+    private Object member;
+    private Object schedule;
 
     public Group(String title) {
         this.title = title;
@@ -30,19 +30,19 @@ public class Group {
         this.inviteCode = inviteCode;
     }
 
-    public ArrayList<User> getMember() {
+    public Object getMember() {
         return member;
     }
 
-    public void setMember(ArrayList<User> member) {
+    public void setMember(Object member) {
         this.member = member;
     }
 
-    public ArrayList<Schedule> getSchedule() {
+    public Object getSchedule() {
         return schedule;
     }
 
-    public void setSchedule(ArrayList<Schedule> schedule) {
+    public void setSchedule(Object schedule) {
         this.schedule = schedule;
     }
 }

@@ -15,9 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.ViewHolder> {
 
-    private ArrayList<Group> list;
+    private ArrayList<Group> list = new ArrayList<>();
 
-    public GroupAdapter(ArrayList<Group> list) {
+    public void setData(ArrayList<Group> list) {
         this.list = list;
     }
 
