@@ -100,7 +100,7 @@
             app:neumorph_inset="10dp">
 
             <Button
-                android:id="@+id/creategroup_btn"
+                android:id="@+id/createSchedule_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/noto_bold"

@@ -8,7 +8,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.chlwhdtn.grouping.Data.CommonResult;
-import com.chlwhdtn.grouping.Data.LoginObject;
 import com.chlwhdtn.grouping.Data.RequestGroupCreate;
 import com.chlwhdtn.grouping.Data.RequestJoinGroup;
 import com.chlwhdtn.grouping.Retrofit.GroupingRetrofit;
@@ -38,7 +37,7 @@ public class CreateGroupActivity extends AppCompatActivity {
         joingroup_btn = findViewById(R.id.joingroup_btn);
         joingroup_edit = findViewById(R.id.joingroup_name);
 
-        creategroup_btn = findViewById(R.id.creategroup_btn);
+        creategroup_btn = findViewById(R.id.createSchedule_btn);
         creategroup_edit = findViewById(R.id.creategroup_name);
 
         creategroup_btn.setOnClickListener(item -> {
@@ -61,6 +60,7 @@ public class CreateGroupActivity extends AppCompatActivity {
 
                     if(result.isSuccess()) {
                         MessageBox.show(item, result.getMessage(), MessageType.DONE);
+                        finish();
                     } else {
                         MessageBox.show(item, result.getMessage(), MessageType.ERROR);
                     }

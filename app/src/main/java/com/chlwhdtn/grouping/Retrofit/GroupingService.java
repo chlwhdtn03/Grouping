@@ -4,6 +4,7 @@ import com.chlwhdtn.grouping.Data.CommonResult;
 import com.chlwhdtn.grouping.Data.Location.Location;
 import com.chlwhdtn.grouping.Data.LoginObject;
 import com.chlwhdtn.grouping.Data.RegisterData;
+import com.chlwhdtn.grouping.Data.RequestExitGroup;
 import com.chlwhdtn.grouping.Data.RequestGroupCreate;
 import com.chlwhdtn.grouping.Data.RequestJoinGroup;
 import com.chlwhdtn.grouping.Data.Schedule;
@@ -64,7 +65,7 @@ public interface GroupingService {
     @POST("grouping/group/exit")
     Call<CommonResult> exitGroup(
             @Header("Authorization") String token,
-            @Body String code
+            @Body RequestExitGroup body
     );
 
     @POST("grouping/group/join")

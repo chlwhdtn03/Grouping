@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.chlwhdtn.grouping.Data.Group;
 import com.chlwhdtn.grouping.Data.Schedule;
 import com.chlwhdtn.grouping.R;
 
@@ -16,9 +17,9 @@ import java.util.ArrayList;
 
 public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHolder> {
 
-    public ArrayList<Schedule> list;
+    public ArrayList<Schedule> list = new ArrayList<>();
 
-    public ScheduleAdapter(ArrayList<Schedule> list) {
+    public void setData(ArrayList<Schedule> list) {
         this.list = list;
     }
 
@@ -31,7 +32,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.date.setText(list.get(position).getDate());
-        holder.group.setText(list.get(position).getOwner());
+        holder.group.setText(list.get(position).getLocation());
         holder.title.setText(list.get(position).getTitle());
 
     }
@@ -49,7 +50,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
             super(itemView);
 
             title = itemView.findViewById(R.id.item_schedule_title);
-            group = itemView.findViewById(R.id.item_group_title);
+            group = itemView.findViewById(R.id.item_schedule_owner);
             date = itemView.findViewById(R.id.item_schedule_date);
         }
 

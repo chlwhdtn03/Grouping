@@ -98,16 +98,12 @@
                 app:neumorph_shadowColorDark="@color/solid_dark_color"
                 app:neumorph_inset="10dp">
 
-                <EditText
+                <DatePicker
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="날짜"
-                    android:fontFamily="@font/noto_regular"
-                    android:includeFontPadding="false"
                     android:padding="10dp"
-                    android:textSize="16sp"
                     android:id="@+id/createSchedule_date"
-                    android:inputType="text"
                     android:background="@null"/>
 
             </soup.neumorphism.NeumorphCardView>
@@ -128,16 +124,16 @@
                 app:neumorph_inset="10dp">
 
                 <EditText
+                    android:id="@+id/createSchedule_place"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="장소"
+                    android:background="@null"
                     android:fontFamily="@font/noto_regular"
+                    android:hint="장소"
                     android:includeFontPadding="false"
-                    android:padding="10dp"
-                    android:textSize="16sp"
-                    android:id="@+id/createSchedule_place"
                     android:inputType="text"
-                    android:background="@null"/>
+                    android:padding="10dp"
+                    android:textSize="16sp" />
 
             </soup.neumorphism.NeumorphCardView>
 
@@ -158,7 +154,7 @@
                 app:neumorph_inset="10dp">
 
                 <Button
-                    android:id="@+id/creategroup_btn"
+                    android:id="@+id/createSchedule_btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/noto_bold"
