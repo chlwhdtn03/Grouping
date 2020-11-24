@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.chlwhdtn.grouping.Data.CommonResult;
@@ -46,6 +47,12 @@ public class GroupInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_group_info);
 
         Intent intent = getIntent();
+
+        ImageView backbtn = findViewById(R.id.groupinfo_back);
+
+        backbtn.setOnClickListener(item -> {
+            finish();
+        });
 
         tv_code = findViewById(R.id.groupinfo_code);
         tv_name = findViewById(R.id.groupinfo_name);

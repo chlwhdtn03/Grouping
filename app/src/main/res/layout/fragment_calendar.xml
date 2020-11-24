@@ -16,6 +16,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="선택한 날의 스케쥴!"
+            android:fontFamily="@font/noto_bold"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:includeFontPadding="false"/>
+
         <androidx.recyclerview.widget.RecyclerView
             tools:listitem="@layout/item_schedule"
             android:id="@+id/calendar_recyclerview"

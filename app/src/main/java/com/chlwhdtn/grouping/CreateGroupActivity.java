@@ -107,7 +107,7 @@ public class CreateGroupActivity extends AppCompatActivity {
             });
         });
 
-        backbtn = findViewById(R.id.group_back);
+        backbtn = findViewById(R.id.creategroup_back);
 
         backbtn.setOnClickListener(item -> {
             finish();

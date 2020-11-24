@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.chlwhdtn.grouping.Data.CommonResult;
 import com.chlwhdtn.grouping.Data.LoginObject;
@@ -46,6 +48,12 @@ public class ScheduleCreateActivity extends AppCompatActivity {
         currentDate = cal.get(Calendar.YEAR) + "/" + (cal.get(Calendar.MONTH)+1) + "/" + cal.get(Calendar.DAY_OF_MONTH);
         System.out.println(currentDate);
         create_btn = findViewById(R.id.createSchedule_btn);
+
+        ImageView backbtn = findViewById(R.id.createSchedule_back);
+
+        backbtn.setOnClickListener(item -> {
+            finish();
+        });
 
         create_btn.setOnClickListener(item -> {
             String title = tv_title.getText().toString().trim(), place = tv_place.getText().toString().trim(), date = currentDate;

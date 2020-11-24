@@ -96,14 +96,18 @@
             </LinearLayout>
 
         </soup.neumorphism.NeumorphCardView>
-
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/profile_id_layout"
+            app:layout_constraintRight_toRightOf="parent">
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/profile_logout_btn"
-            app:layout_constraintTop_toBottomOf="@+id/profile_id_layout"
-            app:layout_constraintRight_toRightOf="parent"
+            android:background="#0000"
             android:text="Logout"/>
+        </soup.neumorphism.NeumorphCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
