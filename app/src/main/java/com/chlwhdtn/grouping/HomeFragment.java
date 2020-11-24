@@ -95,9 +95,19 @@ public class HomeFragment extends Fragment {
                     temp = temp.replace("[[","[");
                     temp = temp.replace("]]","]");
                     System.out.println(temp);
+
+
                     ArrayList<Group> list = gson.fromJson(temp, new TypeToken<ArrayList<Group>>(){}.getType());
+                    ArrayList<Group> edit_list = new ArrayList<>();
                     Collections.reverse(list);
-                    Gadapter.setData(list);
+
+                    for(Group g : list) {
+                        if (gson.fromJson(gson.toJson(g.getMember()), String[].class).length != 0)
+                            edit_list.add(g);
+                    }
+
+                    Gadapter.setData(edit_list);
+
                     Gadapter.notifyDataSetChanged();
                 }
             }

@@ -1,5 +1,6 @@
 package com.chlwhdtn.grouping;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,6 +36,8 @@ public class ProfileFragment extends Fragment {
         logout_btn = view.findViewById(R.id.profile_logout_btn);
         logout_btn.setOnClickListener(v -> {
             UserManager.deleteAccount(getContext());
+            getActivity().finish();
+            getActivity().startActivity(new Intent(getActivity(), LoginActivity.class));
         });
 
         return view;

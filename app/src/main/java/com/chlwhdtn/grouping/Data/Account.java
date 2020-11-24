@@ -1,7 +1,15 @@
 package com.chlwhdtn.grouping.Data;
 
 public class Account {
-    private String id, password, accessToken;
+    private String _id, id, password, accessToken;
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
+    }
 
     public String getAccessToken() {
         return accessToken;
