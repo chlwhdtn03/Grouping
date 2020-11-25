@@ -1,5 +1,6 @@
 package com.chlwhdtn.grouping;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -18,6 +19,9 @@ import com.chlwhdtn.grouping.Util.LoadingBox;
 import com.chlwhdtn.grouping.Util.MessageBox;
 import com.chlwhdtn.grouping.Util.MessageType;
 import com.chlwhdtn.grouping.Util.UserManager;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -51,38 +55,47 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         loginbtn.setOnClickListener(v -> {
-            GroupingService retrofit = GroupingRetrofit.getInstance(getBaseContext()).getGroupingService();
-            Call<CommonResult> response = retrofit.Login(new LoginObject(id.getText().toString(),pw.getText().toString(),"0"));
-
-            response.enqueue(new Callback<CommonResult>() {
+            FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
                 @Override
-                public void onResponse(Call<CommonResult> call, Response<CommonResult> res) {
-                    CommonResult result = res.body();
-
-                    if(result == null) {
-                        try { result = new Gson().fromJson(res.errorBody().string(), CommonResult.class); }
-                        catch (IOException e) {
-                            MessageBox.show(v, "로그인에 문제가 발생하였습니다.", MessageType.ERROR);
-                            e.printStackTrace();
-                        }
+                public void onComplete(@NonNull Task<String> task) {
+                    if (!task.isSuccessful()) {
+                        Log.w("FIREBASE", "Fetching FCM registration token failed", task.getException());
+                        return;
                     }
+                    String token = task.getResult();
+                    GroupingService retrofit = GroupingRetrofit.getInstance(getBaseContext()).getGroupingService();
+                    Call<CommonResult> response = retrofit.Login(new LoginObject(id.getText().toString(),pw.getText().toString(),token));
 
-                    if(result.isSuccess()) {
-                        UserManager.saveAccount(getBaseContext(), id.getText().toString(), pw.getText().toString(), result.getAccessToken());
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                        finish();
-                    } else {
+                    response.enqueue(new Callback<CommonResult>() {
+                        @Override
+                        public void onResponse(Call<CommonResult> call, Response<CommonResult> res) {
+                            CommonResult result = res.body();
+
+                            if(result == null) {
+                                try { result = new Gson().fromJson(res.errorBody().string(), CommonResult.class); }
+                                catch (IOException e) {
+                                    MessageBox.show(v, "로그인에 문제가 발생하였습니다.", MessageType.ERROR);
+                                    e.printStackTrace();
+                                }
+                            }
+
+                            if(result.isSuccess()) {
+                                UserManager.saveAccount(getBaseContext(), id.getText().toString(), pw.getText().toString(), result.getAccessToken());
+                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                finish();
+                            } else {
 //                        Toast.makeText(getBaseContext(), result.getMessage(), Toast.LENGTH_LONG).show();
-                        MessageBox.show(v, result.getMessage(), MessageType.WARNING);
-                    }
-                }
+                                MessageBox.show(v, result.getMessage(), MessageType.WARNING);
+                            }
+                        }
 
-                @Override
-                public void onFailure(Call<CommonResult> call, Throwable t) {
-                    MessageBox.show(v, t.getMessage(), MessageType.ERROR);
+                        @Override
+                        public void onFailure(Call<CommonResult> call, Throwable t) {
+                            MessageBox.show(v, t.getMessage(), MessageType.ERROR);
+                        }
+                    });
                 }
             });
-
         });
 
         regbtn.setOnClickListener(v -> {
